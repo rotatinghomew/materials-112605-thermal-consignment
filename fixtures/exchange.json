@@ -1,0 +1,293 @@
+{
+  "contracts": [
+    {
+      "id": "C-31",
+      "buyer": "SU-1",
+      "sites": [
+        "QIN",
+        "SHU"
+      ],
+      "mode": "retro",
+      "tiers": [
+        [
+          1,
+          8200
+        ],
+        [
+          3,
+          7600
+        ],
+        [
+          5,
+          7000
+        ]
+      ],
+      "return_credit": true
+    },
+    {
+      "id": "C-32",
+      "buyer": "SU-2",
+      "sites": [
+        "HU",
+        "SHU"
+      ],
+      "mode": "marginal",
+      "tiers": [
+        [
+          1,
+          9100
+        ],
+        [
+          3,
+          8300
+        ],
+        [
+          4,
+          7500
+        ]
+      ],
+      "return_credit": false
+    }
+  ],
+  "pieces": [
+    {
+      "id": "P01",
+      "contract": "C-31",
+      "site": "QIN",
+      "package": "sealed"
+    },
+    {
+      "id": "P02",
+      "contract": "C-31",
+      "site": "QIN",
+      "package": "sealed"
+    },
+    {
+      "id": "P03",
+      "contract": "C-31",
+      "site": "QIN",
+      "package": "sealed"
+    },
+    {
+      "id": "P04",
+      "contract": "C-31",
+      "site": "SHU",
+      "package": "sealed"
+    },
+    {
+      "id": "P05",
+      "contract": "C-31",
+      "site": "SHU",
+      "package": "open"
+    },
+    {
+      "id": "P06",
+      "contract": "C-31",
+      "site": "QIN",
+      "package": "sealed"
+    },
+    {
+      "id": "P07",
+      "contract": "C-32",
+      "site": "HU",
+      "package": "sealed"
+    },
+    {
+      "id": "P08",
+      "contract": "C-32",
+      "site": "HU",
+      "package": "sealed"
+    },
+    {
+      "id": "P09",
+      "contract": "C-32",
+      "site": "SHU",
+      "package": "sealed"
+    },
+    {
+      "id": "P10",
+      "contract": "C-32",
+      "site": "HU",
+      "package": "sealed"
+    }
+  ],
+  "orders": [
+    {
+      "id": "SO-1",
+      "contract": "C-31",
+      "intended_site": "QIN",
+      "fallback": "SHU",
+      "pieces": [
+        "P01",
+        "P02",
+        "P03",
+        "P06"
+      ],
+      "ship": "2027-01-18T08:00:00+08:00"
+    },
+    {
+      "id": "SO-2",
+      "contract": "C-31",
+      "intended_site": "SHU",
+      "fallback": null,
+      "pieces": [
+        "P04",
+        "P05"
+      ],
+      "ship": "2027-01-18T08:00:00+08:00"
+    },
+    {
+      "id": "SO-3",
+      "contract": "C-32",
+      "intended_site": "HU",
+      "fallback": null,
+      "pieces": [
+        "P07",
+        "P08",
+        "P09",
+        "P10"
+      ],
+      "ship": "2027-01-18T08:00:00+08:00"
+    }
+  ],
+  "movements": [
+    {
+      "id": "MOV-1",
+      "piece": "P03",
+      "sender": "QIN",
+      "receiver": "SHU",
+      "state": "dispatched",
+      "happened": "2027-01-28T09:01:00+08:00",
+      "arrived": "2027-01-28T09:34:00+08:00"
+    },
+    {
+      "id": "MOV-2",
+      "piece": "P03",
+      "sender": "QIN",
+      "receiver": "SHU",
+      "state": "accepted",
+      "happened": "2027-01-29T10:01:00+08:00",
+      "arrived": "2027-02-04T10:31:00+08:00"
+    },
+    {
+      "id": "MOV-3",
+      "piece": "P07",
+      "sender": "HU",
+      "receiver": "SHU",
+      "state": "reported_lost",
+      "happened": "2027-01-27T11:00:00+08:00",
+      "arrived": "2027-01-27T11:00:00+08:00"
+    }
+  ],
+  "usage": [
+    {
+      "id": "U-1",
+      "piece": "P01",
+      "site": "QIN",
+      "seq": 1,
+      "occurred": "2027-01-30T09:11:00+08:00",
+      "reported": "2027-01-30T09:12:00+08:00"
+    },
+    {
+      "id": "U-2",
+      "piece": "P02",
+      "site": "QIN",
+      "seq": 2,
+      "occurred": "2027-01-30T09:25:00+08:00",
+      "reported": "2027-01-30T09:26:00+08:00"
+    },
+    {
+      "id": "U-3",
+      "piece": "P03",
+      "site": "SHU",
+      "seq": 3,
+      "occurred": "2027-01-30T09:35:00+08:00",
+      "reported": "2027-02-04T10:24:00+08:00"
+    },
+    {
+      "id": "U-4",
+      "piece": "P04",
+      "site": "SHU",
+      "seq": 4,
+      "occurred": "2027-01-30T09:40:00+08:00",
+      "reported": "2027-01-30T09:41:00+08:00"
+    },
+    {
+      "id": "U-5",
+      "piece": "P07",
+      "site": "SHU",
+      "seq": 5,
+      "occurred": "2027-01-30T10:00:00+08:00",
+      "reported": "2027-01-30T10:01:00+08:00"
+    },
+    {
+      "id": "U-6",
+      "piece": "P08",
+      "site": "HU",
+      "seq": 6,
+      "occurred": "2027-01-30T10:01:00+08:00",
+      "reported": "2027-01-30T10:10:00+08:00"
+    },
+    {
+      "id": "U-7",
+      "piece": "P09",
+      "site": "SHU",
+      "seq": 7,
+      "occurred": "2027-01-30T10:03:00+08:00",
+      "reported": "2027-01-30T10:10:00+08:00"
+    },
+    {
+      "id": "U-8",
+      "piece": "P10",
+      "site": "HU",
+      "seq": 8,
+      "occurred": "2027-01-30T10:25:00+08:00",
+      "reported": "2027-02-04T10:35:00+08:00"
+    }
+  ],
+  "returns": [
+    {
+      "id": "RT-1",
+      "piece": "P06",
+      "type": "unused",
+      "usage": null,
+      "occurred": "2027-01-31T13:15:00+08:00",
+      "reported": "2027-02-02T16:01:00+08:00"
+    },
+    {
+      "id": "RT-2",
+      "piece": "P02",
+      "type": "credit_return",
+      "usage": "U-2",
+      "occurred": "2027-02-03T14:35:00+08:00",
+      "reported": "2027-02-03T14:40:00+08:00"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "PAY-1",
+      "invoice": "I-01",
+      "period": "2027-01",
+      "usages": [
+        "U-1",
+        "U-2",
+        "U-4"
+      ],
+      "phase": "accepted",
+      "happened": "2027-02-01T09:00:00+08:00",
+      "arrived": "2027-02-04T13:45:00+08:00"
+    },
+    {
+      "id": "PAY-2",
+      "invoice": "I-02",
+      "period": "2027-01",
+      "usages": [
+        "U-6",
+        "U-7"
+      ],
+      "phase": "settled",
+      "happened": "2027-02-02T10:00:00+08:00",
+      "arrived": "2027-02-02T10:01:00+08:00"
+    }
+  ]
+}
